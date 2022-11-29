@@ -1,14 +1,22 @@
 import React from 'react';
+import DeleteIcon from '@mui/icons-material/Delete';
 
-function Note(){
+function Note(props){
+
+    function clickHandle(){
+        props.onDelete(props.id)
+    }
     return (
-        <note>
-        <div>
-            <h1>Title</h1>
-            <p>content</p>
+    
+        <div className='note'>
+            <h1>{props.title}</h1>
+            <p>{props.content}</p>
+            <button onClick={clickHandle}><DeleteIcon /></button>
+            
+
 
         </div>
-        </note>
+    
     )
 }
 export default Note;
